@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = 'chatty.Chatty'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'assets'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'com.melloware', name: 'jintellitype', version: '1.3.9'
+}
